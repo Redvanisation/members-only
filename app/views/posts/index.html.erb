@@ -1,0 +1,12 @@
+<h1>Posts Index</h1>
+
+
+<% @posts.each do |post| %>
+    <h2><%= post.title %></h2>
+    <p><%= post.content %></p>
+    <% if logged_in? %>
+        <% user = User.find_by(id: post.user_id) %>
+        <h4><%= user.username %></h4>
+    <% end %>
+    <hr>
+<% end %>
