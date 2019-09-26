@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     attr_accessor :token
     before_create :remember
+    has_many :posts
 
     validates :username, presence: true, length: { maximum: 20}
     validates :email, presence: true, uniqueness: true
