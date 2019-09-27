@@ -1,5 +1,6 @@
 <h1 class="margin-bottom-big">All Articles List</h1>
 
+<%= will_paginate %>
 
 <% @posts.each do |post| %>
 <div class="article">
@@ -16,3 +17,5 @@
     </ul>
 </div>
 <% end %>
+
+<%= will_paginate %>
