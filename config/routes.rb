@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   root 'static_pages#home'
 
@@ -6,6 +8,6 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy' 
-  resources :posts, only: [:new, :create, :index] 
+  delete '/logout',  to: 'sessions#destroy'
+  resources :posts, only: %i[new create index]
 end
