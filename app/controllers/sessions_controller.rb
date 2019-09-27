@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password]) 
       log_in user
       remember user
-      flash[:success] = "you are in!"
+      flash[:success] = "Welcome back you are in!"
       redirect_to root_url
     else
       flash.now[:danger] = "Invalid Username/password combination"
@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out
+    flash[:success] = "Logged out successfully, come back soon!"
     redirect_to root_url
   end
 end

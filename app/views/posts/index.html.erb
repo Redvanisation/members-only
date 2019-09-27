@@ -1,12 +1,18 @@
-<h1>Posts Index</h1>
+<h1 class="margin-bottom-big">All Articles List</h1>
 
 
 <% @posts.each do |post| %>
-    <h2><%= post.title %></h2>
-    <p><%= post.content %></p>
-    <% if logged_in? %>
-        <% user = User.find_by(id: post.user_id) %>
-        <h4><%= user.username %></h4>
-    <% end %>
-    <hr>
+<div class="article">
+    <h3 class="article-title center"><%= post.title %></h3>
+    <p class="article-body"><%= post.content %></p>
+    
+    <ul class="right">
+        <% if logged_in? %>
+            <% user = User.find_by(id: post.user_id) %>
+            <li class="italic"><span class="bold">Author: </span><%= user.username %></li>
+        <% end %>
+        
+        <li class="date"><span class="bold">Date: </span><%= post.created_at %></li>
+    </ul>
+</div>
 <% end %>

@@ -134,10 +134,61 @@ input, textarea, select, .uneditable-input {
 
 /* Classes */
 
-.container {
-    // margin: 10px auto;
-}
-
 .home {
     padding: 15% 0;
+}
+
+.margin-bottom-big {
+    margin-bottom: 100px;
+}
+
+.new-post {
+    padding: 5% 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic; 
+}
+
+.article {
+    
+    padding: 50px 10px;
+    border-top: 1px solid $gray-medium-light;
+    
+    &-title {
+        text-transform: capitalize;
+        font-size: 28px;
+    }
+    
+    &-body {
+        font-size: 18px;
+        padding: 30px 10px;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    &-body::first-letter {
+        text-transform: uppercase;
+        padding-left: 15px;
+    }
+
+    // &:not(:last-child) {
+    // }
+
+    ul {
+        list-style-type: none;
+    }
+}
+
+.right {
+    float: right;
+}
+
+.block {
+    display: block;
 }

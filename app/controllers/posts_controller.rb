@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 before_action :user_logged_in, only: [:new, :create] 
 
 def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
 end
 
 def new 
@@ -17,8 +17,10 @@ def create
     @post.update_attribute(:user_id, user_id)
 
     if @post.save
+        flash[:success] = "Article published successfully"
         redirect_to posts_url
     else
+        flash.now[:danger] = "Title/content fields shouldn't be blank"
         render 'new'
     end
 end 
