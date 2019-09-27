@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MembersOnly</title>
+    <title>Members Only</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <%= render 'layouts/head' %>
+      
+      <%= yield %>
+
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
