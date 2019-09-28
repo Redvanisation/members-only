@@ -12,7 +12,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    user_id = session[:user_id]
     @post = current_user.posts.build(post_params)
     @post.user_id = current_user.id
 
@@ -29,7 +28,7 @@ class PostsController < ApplicationController
   private
 
   def user_logged_in
-    unless logged_in?
+    if !logged_in?
       flash[:danger] = 'You are not logged in / please login to be able to see the articles'
       redirect_to login_url
     end

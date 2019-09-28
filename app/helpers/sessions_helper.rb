@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module SessionsHelper
+  
   def log_in(user)
     session[:user_id] = user.id
   end
@@ -9,7 +10,7 @@ module SessionsHelper
     user.change_token
     cookies.permanent.signed[:user_id] = user.id
     cookies.permanent[:remember_token] = user.remember_token
-    end
+  end
 
   def current_user=(user)
     @current_user = user
