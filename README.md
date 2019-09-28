@@ -1,7 +1,7 @@
 # The Members Only App
 
-In this project, we built a functional blogging system without signing up and commenting abilities.
-We used the Rails console to sign up new users, these users will be able then to publish new articles and see who published other articles.
+In this project, we built a functional blogging system without commenting abilities.
+New users can sign up, they will be able then to publish new articles and see who published other articles.
 The public can see all articles also but without the name of the users who published them.
 
 
