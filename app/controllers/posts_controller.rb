@@ -28,10 +28,10 @@ class PostsController < ApplicationController
   private
 
   def user_logged_in
-    unless logged_in?
-      flash[:danger] = 'You are not logged in / please login to be able to see the articles'
-      redirect_to login_url
-    end
+    return if logged_in?
+
+    flash[:danger] = 'You are not logged in / please login to be able to see the articles'
+    redirect_to login_url
   end
 
   def post_params
