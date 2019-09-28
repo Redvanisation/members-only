@@ -169,6 +169,7 @@ input, textarea, select, .uneditable-input {
         padding: 30px 10px;
         line-height: 1.8;
         max-width: 800px;
+        word-wrap: break-word;
         margin: 0 auto;
     }
 
@@ -176,9 +177,6 @@ input, textarea, select, .uneditable-input {
         text-transform: uppercase;
         padding-left: 15px;
     }
-
-    // &:not(:last-child) {
-    // }
 
     ul {
         list-style-type: none;
@@ -191,4 +189,8 @@ input, textarea, select, .uneditable-input {
 
 .block {
     display: block;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
