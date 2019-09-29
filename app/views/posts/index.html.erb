@@ -1,0 +1,24 @@
+<h1 class="margin-bottom-big">All Articles List</h1>
+
+<%= will_paginate %>
+
+<% @posts.each do |post| %>
+<div class="article">
+    <h3 class="article-title center"><%= post.title %></h3>
+    <p class="article-body capital-firstl"><%= post.content %></p>
+    
+    <ul class="right">
+        <% if logged_in? %>
+            <% user = User.find_by(id: post.user_id) %>
+            <li class="italic">
+                <span class="bold">Author: </span>
+                <span class="capitalize"><%= user.username %></span>
+            </li>
+        <% end %>
+        
+        <li class="date"><span class="bold">Date: </span><%= post.created_at %></li>
+    </ul>
+</div>
+<% end %>
+
+<%= will_paginate %>

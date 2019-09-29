@@ -1,0 +1,17 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <%= link_to "Members Only", root_path, id: "logo" %>
+        <nav>
+            <ul class="nav navbar-nav navbar-right">
+                <li><%= link_to "Home", root_path %></li>
+                <li><%= link_to "Articles", posts_path %></li>
+                <% if logged_in? %>
+                    <li><%= link_to "New Article", new_post_path %></li>
+                    <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+                <% else %>
+                    <li><%= link_to "Login", login_path %></li>
+                <% end %>
+            </ul>
+        </nav>
+    </div>
+</header>

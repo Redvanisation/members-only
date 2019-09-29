@@ -1,0 +1,196 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* VARIABLES */
+$gray-medium-light: #eaeaea;
+$white: #fff;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// UNIVERSAL STYLING
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    padding-top: 60px;
+}
+
+section {
+    overflow: auto;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.center {
+    text-align: center;
+
+  h1 {
+    margin-bottom: 60px;
+  }
+}
+
+
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: $white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+
+  &:hover {
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+
+
+/* footer */
+
+footer {
+  margin: 0 auto 45px;
+  padding-top: 10px;
+  border-top: 1px solid $gray-medium-light;
+  color: $gray-light;
+  text-align: center;
+
+  a {
+    color: $gray;
+    &:hover {
+      color: $gray-darker;
+      text-decoration: none;
+    }
+  }
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+    @include box_sizing;
+  }
+  
+  input {
+    height: auto !important;
+  }
+  
+  #error_explanation {
+    color: red;
+    ul {
+      color: red;
+      margin: 0 0 30px 0;
+    }
+  }
+  
+  .field_with_errors {
+    @extend .has-error;
+    .form-control {
+      color: $state-danger-text;
+    }
+  }
+
+/* Classes */
+
+.home {
+    padding: 15% 0;
+}
+
+.margin-bottom-big {
+    margin-bottom: 100px;
+}
+
+.new-post {
+    padding: 5% 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic; 
+}
+
+.article {
+    
+    padding: 50px 10px;
+    border-top: 1px solid $gray-medium-light;
+    
+    &-title {
+        text-transform: capitalize;
+        font-size: 28px;
+    }
+    
+    &-body {
+        font-size: 18px;
+        padding: 30px 10px;
+        line-height: 1.8;
+        max-width: 800px;
+        word-wrap: break-word;
+        margin: 0 auto;
+    }
+
+    &-body::first-letter {
+        text-transform: uppercase;
+        padding-left: 15px;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+}
+
+.right {
+    float: right;
+}
+
+.block {
+    display: block;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
